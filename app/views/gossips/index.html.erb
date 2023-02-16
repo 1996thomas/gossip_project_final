@@ -1,15 +1,19 @@
-<h1>Tous les gossips : </h1>
-<%@gossips.each do |gossip|%>
-<h2>
-<%=gossip.title%>
-</h2>
-<p>
-<%= gossip.content%>
-</p>
-<a href="<%=gossip_path(gossip.id)%>" class="btn btn-sm btn-primary">Voir</a>
-<a href="<%=edit_gossip_path(gossip.id)%>" class="btn btn-sm btn btn-outline-primary">Editer</a>
-<%= button_to "Supprimer", gossip_path(gossip.id), method: :delete, class: 'btn btn-sm btn-outline-danger'%>
+<div class="container mt-5 d-flex justify-content-center flex-column align-items-center">
+  <h1 class="mb-5">Tous les gossips : </h1>
+  <%= button_to "Ajouter gossip", new_gossip_path, method: :get, class: 'btn btn-sm btn-outline-success'%>
+    <%@gossips.each do |gossip|%>
+      <h2 class="my-3">
+        <%=gossip.title%>
+      </h2>
+      <p>
+        <%= gossip.content%>
+      </p>
+      <div class="container col-4 d-flex justify-content-around my-4">
+        <a href="<%=gossip_path(gossip.id)%>" class="btn btn-sm btn-primary">Voir</a>
+        <a href="<%=edit_gossip_path(gossip.id)%>" class="btn btn-sm btn btn-outline-primary">Editer</a>
+        <%= button_to "Supprimer", gossip_path(gossip.id), method: :delete, class: 'btn btn-sm btn-outline-danger'%>
+      </div>
+    <%end%>
 
-<%end%>
-<a href="<%=new_gossip_path%>" class="btn btn-sm btn-success">Nouveau gossip</a>
+
 

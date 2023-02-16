@@ -1,7 +1,11 @@
+
+<div class="container my-5 d-flex flex-column justify-content-center align-items-center">
+<h1 class="my-3">Connexion</h1>
 <%= form_with url: "/sessions", method: :post do |form| %>
-  <%= form.label :email, "Email:" %>
+  <%= form.label :email, "Adresse e-mail:" %>
   <%= form.text_field :email %>
-  <%= form.label :email, "password:" %>
-  <%= form.text_field :password %>
-  <%= form.submit "Search" %>
+  <%= form.label :email, "Mot de passe:" %>
+  <%= form.password_field :password %>
+  <%= form.submit "Se connecter",class:'btn btn-primary btn-sm' %>
 <% end %>
+</div>

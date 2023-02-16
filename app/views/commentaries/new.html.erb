@@ -1,7 +1,9 @@
-<h1>Créer un commentaire</h1>
+  <div class="container my-5 d-flex flex-column justify-content-center align-items-center">
+<h1>Ecris un commentaire</h1>
 <%= form_tag url_for(action: 'create'), method: "post" do %>
   <%= label_tag 'Contenu' %>
   <%= text_area_tag 'content' %>
   <br /> <br />
   <%= submit_tag "Ajouter un commentaire" %>
   <% end %>
+  </div>

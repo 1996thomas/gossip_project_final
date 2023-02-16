@@ -1,17 +1,17 @@
-<h1><%=@gossip.title%></h1>
-<h2><%=@gossip.content%></h2>
-
-<a href="<%= gossips_path%>" class="btn btn-sm btn-primary">Revenir aux gossips</a>
-<a href="<%= user_path(@user.id)%>" class="btn btn-sm btn-outline-primary">Voir le profil de <%=@user.first_name%></a>
-<a href="<%=edit_gossip_path%>"class="btn btn-sm">Modifier</a>
-
-<div class="container">
-<%@commentaries.each do |commentary|%>
-  <div class="container">
-      <p><%=User.find(commentary.user_id).first_name%> : 
-      <%=commentary.content%></p>
-    </div>
+<div class="container mt-5 d-flex justify-content-center flex-column align-items-center ">
+  <h1><%=@gossip.title%></h1>
+  <h2><%=@gossip.content%></h2>
+    <a href="<%= gossips_path%>" class="btn btn-sm btn-primary my-2">Revenir aux gossips</a>
+    <a href="<%= user_path(@user.id)%>" class="btn btn-sm btn-outline-primary my-2">Voir le profil de <%=@user.first_name%></a>
+    <a href="<%=edit_gossip_path%>"class="btn btn-sm">Modifier</a>
+    <%= button_to "Ajouter un commentaire", new_gossip_commentary_path(@gossip.id), method: :get, class:" my-3 btn btn-sm btn-outline-secondary"%>
+    <div class="container col-5">
+    <h5 class="my-4 ms-2">Commentaires : </h5>
+      <%@commentaries.each do |commentary|%>
+        <div class="container ms-0">
+          <p><%=User.find(commentary.user_id).first_name%> : 
+          <%=commentary.content%></p>
+        </div>
       <%end%>
     </div>
-
-    <%= button_to "Ajouter un commentaire", new_gossip_commentary_path(@gossip.id), method: :get, class:"btn btn-sm btn-outline-danger"%>
+  </div>

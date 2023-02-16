@@ -1,8 +1,9 @@
-<table>
-  <thead>
-    <tr>
-      <th colspan="2"><%=@city.name%></th>
-    </tr>
+<div class="container my-5 d-flex justify-content-center align-items-center">
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2"><h3><%=@city.name%></h3></th>
+      </tr>
     </thead>
     <tbody>
       <tr>
@@ -10,8 +11,16 @@
       </tr>
       <%@gossips.each do |gossip|%>
       <tr>
-      <td>Gossip : <%=gossip.title%> <a class="btn btn-sm btn-outline-secondary" href="<%=gossip_path(gossip.id)%>">Voir le gossip</a> </td>
+        <td>
+          Gossip : <%=gossip.title%>
+          <a
+            class="my-5 btn btn-sm btn-outline-secondary"
+            href="<%=gossip_path(gossip.id)%>"
+            >Voir le gossip</a
+          >
+        </td>
       </tr>
       <%end%>
     </tbody>
-</table>
+  </table>
+</div>
