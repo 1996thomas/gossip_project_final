@@ -4,11 +4,15 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact', as: '/contact'
   get '/team', to: 'static_pages#team', as: '/team'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :gossips
+  
+  resources :gossips do
+    resources :commentaries, only:[:index,:show,:new,:create]
+  end
+
   resources :users
   resources :cities
-  resources :commentaries, only:[:index,:show,:new,:create]
-
+  resources :sessions, only:[:new,:create,:destroy]
+  get '/sessions/profile', to: 'sessions#profile'
   # Defines the root path route ("/")
   # root "articles#index"
 end

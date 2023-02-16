@@ -1,2 +1,12 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
+<h1 class="ps-5 my-3">Liste de tous les villes</h1>
+<%@cities.each do |city|%>
+<div class="py-2 ps-5" style="outline:darkgrey 1px solid; background-color: aliceblue;">
+<h3>
+<%=city.name%>
+</h3>
+<h5>
+<%=city.zip_code%>
+</h5>
+<a href="<%=city_path(city.id)%>" class="btn btn-primary btn-sm my-4">Voir la ville</a>
+</div>
+<%end%>

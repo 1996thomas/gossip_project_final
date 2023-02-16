@@ -1,5 +1,5 @@
 class Gossip < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :join_tag_gossips
   has_many :tags, through: :join_tag_gossips
   has_many :commentaries

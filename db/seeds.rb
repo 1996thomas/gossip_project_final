@@ -21,7 +21,7 @@ end
 #ADD USER
 city = City.all
 10.times do
-  user = User.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,description: Faker::Lorem.sentence(word_count: 10, random_words_to_add: 4),email: Faker::Internet.email ,age:rand(18..35),city: city[(rand(0..9))])
+  user = User.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,description: Faker::Lorem.sentence(word_count: 10, random_words_to_add: 4),email: Faker::Internet.email ,age:rand(18..35),city: city[(rand(0..9))],password: Faker::Games::Pokemon.move)
 end
 #ADD GOSSIP
 user = User.all

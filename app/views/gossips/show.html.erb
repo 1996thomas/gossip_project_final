@@ -14,4 +14,4 @@
       <%end%>
     </div>
 
-    <a href="<%=new_commentary_path %>">Ajouter un com</a>
+    <%= button_to "Ajouter un commentaire", new_gossip_commentary_path(@gossip.id), method: :get, class:"btn btn-sm btn-outline-danger"%>

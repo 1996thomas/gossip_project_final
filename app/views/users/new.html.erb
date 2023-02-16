@@ -1,2 +1,28 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="row">
+<%= form_with model:@user do |form| %>
+<div class="container">
+
+  <%= form.label :first_name, "Prénom:" %>
+  <%= form.text_field :first_name %>
+
+  <%= form.label :last_name, "Nom :" %>
+  <%= form.text_field :last_name %>
+
+  <%= form.label :description, "Description :" %>
+  <%= form.text_field :description %>
+
+  <%= form.label :age, "Age :" %>
+  <%= form.text_field :age %>
+
+  <%= form.select :city_id, @city.map{|c| c.id }%>
+  <p> Choisir une adresse e-mail:  </p>
+  <%= form.label :email, "E-mail" %>
+  <%= form.text_field :email %>
+
+    <p> Choisir un mot de passe:  </p>
+  <%= form.label :password, "Mot de passe :" %>
+  <%= form.password_field :password %>
+  <%= form.submit "Créer un compte" %>
+</div>
+<% end %>
+</div>
