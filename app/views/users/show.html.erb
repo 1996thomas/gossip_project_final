@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="2"><%=@user.first_name%> <%=@user.last_name%></th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Description : "<%=@user.description%>"</td>
+      </tr>
+      <tr>
+        <td>Email : <%=@user.email%></td>
+      </tr>
+      <tr>
+        <td>Age : <%=@user.age%></td>
+      </tr>
+      <tr>
+        <td>Ville : <%=@city.name%> <a href="<%=city_path(@city.id)%>">Voir la ville</a> </td>
+      </tr>
+    </tbody>
+</table>

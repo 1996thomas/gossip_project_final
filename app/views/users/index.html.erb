@@ -1,0 +1,12 @@
+<h1 class="ps-5 my-3">Liste de tous les utilisateurs</h1>
+<%@users.each do |user|%>
+<div class="py-2 ps-5" style="outline:darkgrey 1px solid; background-color: aliceblue;">
+<h3>
+<%=user.first_name%>
+</h3>
+<h5>
+<%=user.last_name%>
+</h5>
+<a href="<%=user_path(user.id)%>" class="btn btn-primary btn-sm my-4">Voir le profil</a>
+</div>
+<%end%>

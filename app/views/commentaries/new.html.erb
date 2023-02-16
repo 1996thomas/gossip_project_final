@@ -1,0 +1,11 @@
+<h1>Créer un commentaire</h1>
+
+<%= form_for @commentary do |f| %>
+  <div class="form-group">
+    <label>Commentaire :</label>
+    <%=f.text_field :content%>
+  </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-sm btn-primary">Ajouter le gossip</button>
+  </div>
+<%end%>

@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="2"><%=@city.name%></th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Zipcode : "<%=@city.zip_code%>"</td>
+      </tr>
+      <%@gossips.each do |gossip|%>
+      <tr>
+      <td>Gossip : <%=gossip.title%> <a class="btn btn-sm btn-outline-secondary" href="<%=gossip_path(gossip.id)%>">Voir le gossip</a> </td>
+      </tr>
+      <%end%>
+    </tbody>
+</table>

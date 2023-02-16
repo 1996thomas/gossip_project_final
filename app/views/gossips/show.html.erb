@@ -1,0 +1,17 @@
+<h1><%=@gossip.title%></h1>
+<h2><%=@gossip.content%></h2>
+
+<a href="<%= gossips_path%>" class="btn btn-sm btn-primary">Revenir aux gossips</a>
+<a href="<%= user_path(@user.id)%>" class="btn btn-sm btn-outline-primary">Voir le profil de <%=@user.first_name%></a>
+<a href="<%=edit_gossip_path%>"class="btn btn-sm">Modifier</a>
+
+<div class="container">
+<%@commentaries.each do |commentary|%>
+  <div class="container">
+      <p><%=User.find(commentary.user_id).first_name%> : 
+      <%=commentary.content%></p>
+    </div>
+      <%end%>
+    </div>
+
+    <a href="<%=new_commentary_path %>">Ajouter un com</a>
